@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="main">
+    <h1>О фильме</h1>
+    <ng-container *ngIf="!selected; else other">
+      <div class="center">
+        <div class="buttonGroup">
+          <button class="selected">
+            КиноПоиск
+          </button>
+          <button (click)="onToggleChange(true)" class="btn">
+            Вручную
+          </button>
+        </div>
+      </div>
+      <form [formGroup]="form">
+        <input type="text" formControlName="searchInput" placeholder="Введите название фильма, например «Титаник»">
+        <div class="searchResults">
+          <ng-container *ngIf="(movies$ | async)!.length > 0;">
+            <div class="movie" *ngFor="let movie of movies$ | async">
+              <img src="{{movie.thumbnail_url}}" alt="{{movie.title}}">
+              <div>
+                <h2>{{movie.title}}</h2>
+                <span>{{movie.date}}</span>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </form>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #other>
+  <div class="center">
+    <div class="buttonGroup">
+      <button (click)="onToggleChange(false)" class="btn">
+        КиноПоиск
+      </button>
+      <button class="selected">
+        Вручную
+      </button>
+    </div>
+  </div>
+  <form class="advancedSearch">
+    <label>Название</label>
+    <input placeholder="Например, Титаник">
+    <label>Год</label>
+    <input placeholder="Укажите год выхода фильма">
+    <label>Описание</label>
+    <input placeholder="Напишите пару слов о сюжете">
+    <label>Жанр</label>
+    <input placeholder="Выберите из списка">
+    <div class="center">
+      <button class="btnAdvancedForm">
+        <img src="assets/Plus.svg"/>
+        Сохранить
+      </button>
+    </div>
+  </form>
+</ng-template>

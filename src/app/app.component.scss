@@ -1,0 +1,111 @@
+.container {
+  display: flex;
+  padding-top: 60px;
+  justify-content: center;
+  font-family: SF Pro Display, sans-serif;
+}
+
+.main {
+  h1 {
+    text-align: center;
+  }
+}
+
+form {
+  input {
+    padding: 16px 8px;
+    border-width: 0 0 0.5px;
+    width: 450px;
+    font-size: 17px;
+  }
+}
+
+.searchResults {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie {
+  display: flex;
+  align-items: center;
+  margin: 6px 0;
+  img {
+    margin-right: 16px;
+    height: 80px;
+  }
+  h2 {
+    color: #878787;
+    margin: 0;
+  }
+  span {
+    color: #cecece
+  }
+}
+
+.advancedSearch {
+  padding-top: 8px;
+  input, select {
+    width: 100%;
+    font-size: 17px;
+    border-width: 0 0 0.5px;
+    padding: 8px 8px;
+    margin: 8px 0;
+  }
+  label {
+    font-weight: 700;
+  }
+  width: 450px;
+}
+
+.center {
+  text-align: center;
+}
+
+
+.btnAdvancedForm {
+  position: relative;
+  width: 150px;
+  height: 38px;
+  border-radius: 20px;
+  border: none;
+  margin: 10px;
+  font: 500 18px Calibri;
+  padding-left: 25px;
+  cursor: pointer;
+  background: #002DFF;
+  color: white;
+  img {
+    filter: none!important;
+  }
+  &:hover {
+    background: #4667ff!important;
+  }
+  &:active {
+    background: #001b9a !important;
+  }
+  img {
+    position: absolute;
+    width: 24px;
+    left: 12px;
+    top: 7px;
+  }
+}
+
+
+.buttonGroup {
+  background: #7676801F;
+  border-radius: 8px;
+  height: 32px;
+  display: inline-block;
+  button {
+    width: 170px;
+    height: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+  }
+  .selected {
+    background: #d7d7d7;
+  }
+}
+
